@@ -30,62 +30,42 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
+- intent: match_with_advisor
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - I want to match with an advisor
+    - Can you help me find an advisor?
+    - I need an advisor for my studies
+    - Help me connect with an advisor
+    - Find me an advisor
+    - I am looking for an advisor
+    - help me with an advisor - i have a gpa of [3.5](gpa), the advisor's field is [Computing methodologies](advisor_field), i'm pursuing a [MS](degree) degree, and the number of students per advisor h-index is [10](sph)
+    - I need an advisor, I have a gpa of [4.0](gpa), the advisor's field is [Artificial intelligence](advisor_field), I'm pursuing a [PhD](degree) degree, and the number of students per advisor h-index is [0](sph)
 
-- intent: deny
+- regex: gpa
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - \b([0-3](\.\d{1,2})?|4(\.0{1,2})?)\b
 
-- intent: mood_great
+- regex: sph
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - sph[^\d](?P<sph>[0-9]|[1-9][0-9]|[1-4][0-9]{2}|500)
 
-- intent: mood_unhappy
+- regex: degree
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - MS
+    - PhD
+    - BS
 
-- intent: bot_challenge
+- regex: advisor_field
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Mathematics of Computing
+    - Theory of Computation
+    - Computer Systems Organization
+    - Hardware
+    - Software and its Engineering
+    - Computing Methodologies
+    - Applied Computing
+    - Information Systems
+    - Networks
+    - Human-centered Computing
+    - Security and Privacy
+    - Social and Professional Topics

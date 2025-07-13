@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-advisor_field",
+      "2": "I-advisor_field",
+      "3": "L-advisor_field",
+      "4": "U-advisor_field",
+      "5": "B-degree",
+      "6": "I-degree",
+      "7": "L-degree",
+      "8": "U-degree",
+      "9": "B-gpa",
+      "10": "I-gpa",
+      "11": "L-gpa",
+      "12": "U-gpa",
+      "13": "B-sph",
+      "14": "I-sph",
+      "15": "L-sph",
+      "16": "U-sph",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-advisor_field": 1,
+      "I-advisor_field": 2,
+      "L-advisor_field": 3,
+      "U-advisor_field": 4,
+      "B-degree": 5,
+      "I-degree": 6,
+      "L-degree": 7,
+      "U-degree": 8,
+      "B-gpa": 9,
+      "I-gpa": 10,
+      "L-gpa": 11,
+      "U-gpa": 12,
+      "B-sph": 13,
+      "I-sph": 14,
+      "L-sph": 15,
+      "U-sph": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

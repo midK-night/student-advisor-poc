@@ -3,28 +3,70 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - match_with_advisor
+
+entities:
+  - gpa
+  - degree
+  - advisor_field
+  - sph
+
+forms:
+  advisor_form:
+    required_slots:
+      - gpa
+      - degree
+      - advisor_field
+      - sph
+
+slots:
+  gpa:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: gpa
+        influence_conversation: true
+  degree:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: degree
+        influence_conversation: true
+  advisor_field:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: advisor_field
+        influence_conversation: true
+  sph:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: sph
+        influence_conversation: true
+
 
 responses:
   utter_greet:
   - text: "Hey! How are you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_ask_gpa:
+  - text: "What is your GPA?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_ask_degree:
+  - text: "What degree are you pursuing?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_ask_advisor_field:
+  - text: "Please enter the advisor's standard field."
+
+  utter_ask_sph:
+  - text: "Please enter the number of students per advisor h-index (SPH: )."
 
   utter_goodbye:
   - text: "Bye"
+
+  utter_matched_advisor:
+  - text: "I have found an advisor for you based on your inputs."
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
